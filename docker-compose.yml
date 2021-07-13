@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: .
+
+    command: >
+      sh -c "yarn typeorm migration:run && yarn start"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+  db:
+    container_name: "database-node"
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=code_drops_authentication

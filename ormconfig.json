@@ -1,0 +1,16 @@
+{
+  "type": "postgres",
+  "host": "db",
+  "port": 5432,
+  "username": "postgres",
+  "password": "123456",
+  "database": "code_drops_authentication",
+  "entities": ["./src/typeorm/model/*.ts"],
+  "migrations": [
+    "./src/typeorm/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/typeorm/migrations"
+  }
+}
+
